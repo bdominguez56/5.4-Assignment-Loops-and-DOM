@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Loop Example</title>
+    <title>Change CSS with JavaScript</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            background-color: lightgray;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+        }
+        .highlight {
+            background-color: lightblue;
+        }
+    </style>
 </head>
 <body>
-    <h1>Check the console for the output</h1>
+    <button onclick="changeStyles()">Change Style</button>
+    <div id="container"></div>
 
-    <script>
-        // JS for loop
-        for (let i = 1; i <= 5; i++) {
-            console.log(i); // print numbers from 1 to 5 in the console
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
