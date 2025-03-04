@@ -1,28 +1,33 @@
-//  loop Example
-for (let i = 1; i <= 5; i++) {
-    console.log("For Loop Iteration: " + i);
+// container element
+const container = document.getElementById("container");
+
+// FOR LOOP 
+for (let i = 1; i <= 10; i++) {
+    let div = document.createElement("div");
+    div.classList.add("box");
+    div.innerText = i; //  number inside each box
+    container.appendChild(div);
 }
 
-//  loop Example
-let j = 1;
-while (j <= 5) {
-    console.log("While Loop Iteration: " + j);
-    j++;
+// WHILE LOOP 
+let boxes = document.querySelectorAll(".box");
+let index = 1;
+while (index < boxes.length) {
+    boxes[index].classList.add("highlight");
+    index += 2; // move to every second box
 }
 
-//  CSS with JavaScript
-function changeCSS() {
-    let outputElement = document.getElementById('loopOutput');
-
-    // color based on a variable value
-    let colorValue = 1;  
-    if (colorValue === 1) {
-        outputElement.style.color = "blue";  
+// CHANGE CSS DYNAMICALLY BASED ON A VARIABLE
+function changeStyles() {
+    let isDarkMode = Math.random() > 0.5; // random mode
+    if (isDarkMode) {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        boxes.forEach(box => box.style.backgroundColor = "gray");
     } else {
-        outputElement.style.color = "red";  
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        boxes.forEach(box => box.style.backgroundColor = "lightgray");
     }
-
-    // class to highlight the element
-    outputElement.classList.add('highlight'); 
-    outputElement.innerHTML = "The text has been modified using JavaScript and CSS!";
 }
+
